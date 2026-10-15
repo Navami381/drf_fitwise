@@ -1,0 +1,91 @@
+#api call for creating user account
+###
+POST http://127.0.0.1:8000/v1/fitwise/register/
+Content-Type: application/json
+
+{
+    "username":"react",
+    "email":"react@gmail.com",
+    "password":"react123"
+}
+
+
+#api call for getting token
+###
+POST http://127.0.0.1:8000/v1/fitwise/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"django123"
+    
+}
+
+
+#api call gets the details of the currently logged-in user.
+###
+GET http://127.0.0.1:8000/v1/fitwise/me/
+Accept: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
+
+#=============================================================================
+#api call for listing food log
+###
+GET http://127.0.0.1:8000/v1/fitwise/food_log/
+Accept: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
+
+#api call for adding food_log
+###
+POST http://127.0.0.1:8000/v1/fitwise/food_log/
+Content-Type: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
+
+ {
+    "title": "Fried rice",
+    "calorie": 350,
+    "meal_type": "lunch",
+    "serving_size": "1 plate"
+}
+
+#api call for retrieving a food_log
+###
+GET http://127.0.0.1:8000/v1/fitwise/food_log/2/
+Accept: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
+
+#api call for updating an food_log
+###
+PUT http://127.0.0.1:8000/v1/fitwise/food_log/2/
+Content-Type: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
+
+{
+    "id": 2,
+  "title": "Chicken Rice",
+  "calorie": 550,
+  "meal_type": "lunch",
+  "serving_size": "250g",
+  "created_at": "2026-10-13T23:46:34.257164Z",
+  "owner": 2
+}
+
+#api call for deleting an food_log
+###
+DELETE http://127.0.0.1:8000/v1/fitwise/food_log/5/
+Accept: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
+
+
+#============================================
+#api call for getting summary
+###
+GET http://127.0.0.1:8000/v1/fitwise/food_log/summary/
+Accept: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
+
+#api call for dietplan summary
+###
+GET http://127.0.0.1:8000/v1/fitwise/food_log/dietplan/
+Accept: application/json
+Authorization: Token a88c3ddbb6eaabba8f6b8937bdb3c47429b3fd08
